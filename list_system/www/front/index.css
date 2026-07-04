@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* ===== TOP BAR ===== */
+#forms.sticky-div {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #111827;
+  padding: 12px 16px;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* button menu */
+#forms #shows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* buttons */
+#forms input[type="submit"],
+#forms button {
+  background: #1f2937;
+  border: 1px solid #374151;
+  color: #e5e7eb;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+#forms input[type="submit"]:hover,
+#forms button:hover {
+  background: #334155;
+}
+
+/* ===== SIDEBAR FORMS (hidden controlled) ===== */
+#forms form {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 100vh;
+
+  background: #0b1220;
+  border-left: 1px solid #1f2937;
+  padding: 20px;
+  overflow-y: auto;
+
+  z-index: 100;
+
+  /* hidden by default */
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+/* ===== showing when NOT hidden ===== */
+#forms form:not([hidden]) {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* headers */
+#forms form h3 {
+  margin-top: 0;
+  color: #facc15;
+  font-size: 16px;
+}
+
+/* text */
+#forms form p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* fields */
+#forms input[type="text"],
+#forms input[type="date"],
+#forms select {
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  padding: 8px;
+
+  background: #111827;
+  border: 1px solid #374151;
+  color: #e5e7eb;
+  border-radius: 6px;
+
+  outline: none;
+}
+
+#forms input[type="text"]:focus,
+#forms input[type="date"]:focus,
+#forms select:focus {
+  border-color: #facc15;
+}
+
+/* radio */
+#forms input[type="radio"] {
+  margin-left: 8px;
+  margin-right: 4px;
+}
+
+/* submit */
+#forms form > input[type="submit"] {
+  width: 100%;
+  margin-top: 10px;
+
+  background: #facc15;
+  color: #111827;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#forms form > input[type="submit"]:hover {
+  background: #eab308;
+}
+
+/* ===== TABLE ===== */
+#root {
+  padding: 20px;
+}
+
+#root table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+}
+
+#root th {
+  background: #111827;
+  color: #facc15;
+  text-align: left;
+  padding: 10px;
+  font-size: 13px;
+}
+
+#root td {
+  padding: 10px;
+  border-top: 1px solid #1f2937;
+  font-size: 13px;
+  color: #e5e7eb;
+}
+
+#root tr:hover {
+  background: #111827;
+}

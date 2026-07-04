@@ -1,0 +1,21 @@
+paths:
+  cam1:
+    source: rtsp://192.168.1.155:8554/h264.sdp
+  #cam2:
+  #  source: rtsp://192.168.1.155:8554/h264.sdp
+  #cam3:
+  #  source: rtsp://192.168.1.155:8554/h264.sdp
+
+hls: true
+hlsAddress: :8888
+hlsSegmentDuration: 1s
+hlsSegmentCount: 300
+
+webrtc: true
+webrtcAddress: :8889
+webrtcLocalUDPAddress: :8189
+
+rtmp: false
+
+#webrtcAdditionalHosts: [192.168.1.173]
+

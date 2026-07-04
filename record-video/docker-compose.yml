@@ -1,0 +1,15 @@
+services:
+
+  mediamtx:
+    image: bluenviron/mediamtx:latest
+    container_name: mediamtx-serv
+    restart: unless-stopped
+
+    volumes:
+      - ./mediamtx.yml:/mediamtx.yml
+
+    ports:
+      - 8189:8189
+      - 8888:8888
+      - 8889:8889
+      - 8554:8554

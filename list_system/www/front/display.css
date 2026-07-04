@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  background: #0b2a4a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#display-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  color: #ffd400;
+}
+
+/* Top left block (attempt + weight) */
+#attempt_number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+#weight_class {
+  position: absolute;
+  top: 55px;
+  left: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Large timer at the top center */
+#weight {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 110px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Exercise Name */
+#attempt_name {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+/* Athlete's name */
+#first_name {
+  position: absolute;
+  top: 280px;
+  left: 60px;
+  font-size: 54px;
+  font-weight: 700;
+}
+
+/* Middle name/Last name */
+#second_name {
+  position: absolute;
+  top: 340px;
+  left: 60px;
+  font-size: 54px;
+  font-weight: 700;
+}
+
+/* a subtle “scoreboard” effect */
+#display-root p {
+  margin: 0;
+  text-shadow: 0 0 6px rgba(255, 212, 0, 0.25);
+}

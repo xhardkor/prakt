@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Info</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <div class="sticky-div" id="forms">
+
+    <!--tmp: Show (Root) -->
+    <p id="shows"> Show:
+      <input type="submit" id="entries" value="Entries">
+      <input type="submit" id="lifters" value="Lifters">
+      <input type="submit" id="attempts" value="Attempts">
+      <input type="submit" id="division" value="Divisions">
+      <input type="submit" id="weight" value="Weights"> |
+      <a href="/display" target="_blank" rel="noopener noreferrer">
+	<input type="submit" id="display" value="&quot;Display&quot; Page">
+      </a>
+    </p>
+
+    <!--MAIN: Forms -->
+    <p> Entries:
+      <button id="btn_add_entry">Add</button>
+      <button id="btn_upd_entry">Update</button>
+      <button id="btn_del_entry">Delete</button>
+    </p>
+    <p>Lifters:
+      <button id="btn_add_lifter">Add</button>
+      <button id="btn_upd_lifter">Update</button>
+      <button id="btn_del_lifter">Delete</button>
+    </p>
+    <p> Attempts:
+      <button id="btn_add_attempt">Add</button>
+      <button id="btn_upd_attempt">Update</button>
+      <button id="btn_del_attempt">Delete</button>
+      <button id="btn_display_attempt">Display</button>
+    </p>
+
+    <!--fo: Lifter Forms -->
+    <!--k:-->
+    <form id="addLifter" hidden>
+      <h3>Add Lifter</h3>
+      <p>
+	Fist Name: <input name="first_name" type="text" placeholder="Marek" required>
+	<br>
+	Second Name: <input name="second_name" type="text" placeholder="App" required>
+	<br>
+	Birth Day: <input name="bday" type="date" required>
+	<br>
+	Sex:
+	<input name="sex" type="radio" id="m" value="M" required>
+	<label for="m">Male</label>
+	<input name="sex" type="radio" id="f" value="F" required>
+	<label for="f">Female</label>
+      </p>
+      <input type="submit">
+    </form>
+
+    <!--k:-->
+    <form id="updateLifter" hidden>
+      <h3>Update Lifter</h3>
+      <p>
+	ID: <input name="l_id" type="text" placeholder="1; 2..." required>
+	<br>
+	Fist Name: <input name="first_name" type="text" placeholder="Marek">
+	<br>
+	Second Name: <input name="second_name" type="text" placeholder="App">
+	<br>
+	Birth Day: <input name="b_day" type="date">
+	<br>
+	Sex:
+	<input name="sex" type="radio" id="m" value="M" >
+	<label for="m">Male</label>
+	<input name="sex" type="radio" id="f" value="F" >
+	<label for="f">Female</label>
+      </p>
+      <input type="submit">
+    </form>
+    <!--k:-->
+    <form id="deleteLifter" hidden>
+      <h3>Delete Lifter</h3>
+      <p>
+      ID: <input name="rem_id" type="text">
+      </p>
+      <input type="submit">
+    </form>
+
+
+    <!--fo: Entries Forms -->
+    <!--k:-->
+    <form id="addEntry" hidden>
+      <h3>Add Entry</h3>
+      <p>
+	Lifter's ID: <input name="lifter_id" type="text" required>
+	<br>
+	Division Name: <select name="division_name"></select>
+	<br>
+	Weight Class: <select name="weight_class_name"></select>
+	<br>
+	Body Weight: <input name="body_weight" type="text" required>
+	<br>
+	Lot Number: <input name="lot_number" type="text">
+	<br>
+	Group Number: <input name="group_number" type="text">
+	<br>
+	Record: <select name="record"></select>
+      </p>
+      <input type="submit">
+    </form>
+
+    <!--k:-->
+    <form id="updateEntry" hidden>
+      <h3>Update Entry</h3>
+      <p>
+	ID: <input name="comp_id" type="text" required>
+	<br>
+	Lifter's ID: <input name="lifter_id" type="text">
+	<br>
+	Division Name: <select name="division_name"></select>
+	<br>
+	Weight Class: <select name="weight_class_name"></select>
+	<br>
+	Body Weight: <input name="body_weight" type="text">
+	<br>
+	Lot Number: <input name="lot_number" type="text">
+	<br>
+	Group Number: <input name="group_number" type="text">
+	<br>
+	Record: <select name="record"></select>
+      </p>
+      <input type="submit">
+    </form>
+
+    <!--k:-->
+    <form id="deleteEntry" hidden>
+      <h3>Delete Entry</h3>
+      <p>
+      ID: <input name="rem_id" type="text">
+      </p>
+      <input type="submit">
+    </form>
+
+
+    <!--fo: Attempts Forms -->
+    <!--k:-->
+    <form id="addAttempt" hidden>
+      <h3>Add Attempt</h3>
+      <p>
+	Competition ID: <input name="competition_entry_id" type="text" required>
+	<br>
+	Lift Type: <select name="lift_type"></select>
+	<br>
+	Attempt Number: <select name="attempt_number"></select>
+	<br>
+	Weight: <input name="weight" type="text" required>
+      </p>
+      <input type="submit">
+    </form>
+
+    <!--k:-->
+    <form id="updateAttempt" hidden>
+      <h3>Update Attempt</h3>
+      <p>
+	Attempt ID: <input name="at_id" type="text" required>
+	<br>
+	Competition ID: <input name="competition_entry_id" type="text" required>
+	<br>
+	Lift Type: <select name="lift_type"></select>
+	<br>
+	Attempt Number: <select name="attempt_number"></select>
+	<br>
+	Weight: <input name="weight" type="text" required>
+      </p>
+      <input type="submit">
+    </form>
+
+    <!--k:-->
+    <form id="deleteAttempt" hidden>
+      <h3>Delete Attempt</h3>
+      <p>
+      ID: <input name="rem_id" type="text">
+      </p>
+      <input type="submit">
+    </form>
+
+    <!--k:-->
+    <form id="displayAttempt" hidden>
+      <h3>Display Attempt</h3>
+      <p>
+      ID: <input name="rem_id" type="text">
+      </p>
+      <input type="submit">
+    </form>
+
+
+  </div>
+
+
+  <div id="root"></div>
+
+	
+  <script src="./index.js"></script>
+</body>
+</html>
