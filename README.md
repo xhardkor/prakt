@@ -4,7 +4,7 @@
 > Recomended to have __Make__ and __Go__
 > (Make usually comes with installing __build-essential__)
 
-## list_system:
+## application dir:
 
 Contains main application with database
 
@@ -19,7 +19,7 @@ make app_start
 ```
 
 
-## record-video:
+## recording dir:
 
 Contains docker with MediaMTX that proxies video translation from cameras to application and saves it in different directory with dates.
 > [!NOTE]
