@@ -1,20 +1,42 @@
-# What is where:
+# Practical Work
+
+> [!WARNING]
+> Recomended to have __Make__ and __Go__
+> (Make usually comes with installing __build-essential__)
 
 ## list_system:
-> __There are:__\
-> Lists of lifters and other parameters\
-> Server for that options\
-> Docker for this system
+
+Contains main application with database
+
+To start that process for testing purpose use this command:
+```bash
+make app_test
+```
+
+After testing it use this command to start real application:
+```bash
+make app_start
+```
+
 
 ## record-video:
-> _There are:_\
-> Video recording system\
-> Saving all video data in the directory\
-__NEED:__
-Docker improve with ffmpeg
 
-## 2rnd
-> __There are:__\
-> Change name\
-> Rework that thing
+Contains docker with MediaMTX that proxies video translation from cameras to application and saves it in different directory with dates.
+> [!NOTE]
+> Use [THIS](recording/README.md) instructions before doing next step
 
+After you've done what was [there](recording/README.md), start generating files:
+```bash
+make rec_gen
+```
+> It generates file for MediaMTX
+
+After all files has been done, start that process:
+```bash
+make rec_start
+```
+
+If you want to translate it live, use next command:
+```bash
+make rec_live
+```

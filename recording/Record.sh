@@ -1,11 +1,12 @@
 #!/bin/bash
 printf "SCRIPT PID: $$"
 
-CAMERAS=(
-  "cam1"
-  "cam2"
-  "cam3"
-)
+RDIR=$(dirname "$0")
+CDIR="$RDIR/.conf"
+
+echo $CDIR
+
+mapfile -t CAMERAS < $CDIR
 PIDS=()
 
 run_camera() {
@@ -13,7 +14,7 @@ run_camera() {
   local NAME=$2
 
   while true; do
-    DIR="$(pwd)/out/$NAME/$(date +%F)"
+    DIR="$RDIR/out/$NAME/$(date +%F)"
     mkdir -p $DIR
     START=$(date +%s)
 
@@ -45,10 +46,10 @@ cleanup() {
 trap cleanup SIGTERM SIGINT SIGKILL
 
 LOCALURL="rtsp://localhost:8554/"
-for index in ${!CAMERAS[@]}; do
-  NAME="${CAMERAS[index]}"
-  run_camera "$LOCALURL" "$NAME" &
+while read -r camera ip; do
+  [[ -z "$camera" || -z "$ip" || "$camera" == \#* ]] && continue
+  run_camera "$LOCALURL" "$camera" &
   PIDS+=($!)
-done
+done < $CDIR
 
 wait

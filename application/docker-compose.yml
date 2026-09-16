@@ -2,7 +2,7 @@ services:
 #--------------------- APP
   app:
     build: ./www
-    image: my-test-dkfile
+    image: entry_list_app
 
     ports:
       - "8080:8080"
