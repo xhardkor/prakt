@@ -1,7 +1,7 @@
 # Practical Work
 
 > [!WARNING]
-> Recomended to have __Make__ and __Go__
+> Recomended to have __Make__ and __Go__\
 > (Make usually comes with installing __build-essential__)
 
 ## application dir:
