@@ -1,12 +1,14 @@
 # Practical Work
 
 > [!WARNING]
-> Recomended to have __Make__ and __Go__\
-> (Make usually comes with installing __build-essential__)
+> Necessary to have: __Docker__, __Make__, __Go__\
+> (Make usually comes with installing __build-essential__ or just __make__)
 
 ## application dir:
 
 Contains main application with database
+> [!NOTE]
+> Use [THIS](application/README.md) guide to add all necessary files
 
 To start that process for testing purpose use this command:
 ```bash
